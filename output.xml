@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211023 23:53:35.732" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\T-Gamer\Desktop\PrimeExpert\PrimeExperts\tests">
+<suite id="s1-s1" name="WebAutomation" source="C:\Users\T-Gamer\Desktop\PrimeExpert\PrimeExperts\tests\WebAutomation.robot">
+<test id="s1-s1-t1" name="Caso de Teste 02: Pesquisar produto não existente">
+<kw name="Abrir navegador" library="Resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211023 23:53:36.081" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20211023 23:53:36.080" endtime="20211023 23:53:37.388"/>
+</kw>
+<status status="PASS" starttime="20211023 23:53:36.080" endtime="20211023 23:53:37.388"/>
+</kw>
+<kw name="Acessar a pagina home do site" library="Resource">
+<doc>Palavra chave utilizada em todos os casos de teste deste cenario</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211023 23:53:37.393" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20211023 23:53:37.393" endtime="20211023 23:53:42.859"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211023 23:53:42.859" endtime="20211023 23:53:42.990"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211023 23:53:42.994" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211023 23:53:42.990" endtime="20211023 23:53:42.994"/>
+</kw>
+<status status="PASS" starttime="20211023 23:53:37.391" endtime="20211023 23:53:42.994"/>
+</kw>
+<kw name="Digite o nome do produto &quot;ItemNãoExistente&quot; no campo de Pesquisar" library="Resource" sourcename="Digite o nome do produto &quot;${PRODUTO}&quot; no campo de Pesquisar">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name = search_query</arg>
+<arg>${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211023 23:53:42.996" level="INFO">Typing text 'ItemNãoExistente' into text field 'name = search_query'.</msg>
+<status status="PASS" starttime="20211023 23:53:42.995" endtime="20211023 23:53:43.096"/>
+</kw>
+<status status="PASS" starttime="20211023 23:53:42.995" endtime="20211023 23:53:43.097"/>
+</kw>
+<kw name="Clicar no botão Pesquisar" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name = submit_search</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211023 23:53:43.098" level="INFO">Clicking element 'name = submit_search'.</msg>
+<status status="PASS" starttime="20211023 23:53:43.098" endtime="20211023 23:53:44.814"/>
+</kw>
+<status status="PASS" starttime="20211023 23:53:43.097" endtime="20211023 23:53:44.815"/>
+</kw>
+<kw name="Conferir mensagem de erro &quot;No results were found for your search&amp;nbsp;&quot;Item inexistente&quot;&quot;" library="Resource" sourcename="Conferir mensagem de erro &quot;${PRODUTO}&quot;">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Search - My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211023 23:53:44.823" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20211023 23:53:44.817" endtime="20211023 23:53:44.823"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath = //p[@class='alert alert-warning']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211023 23:53:44.823" endtime="20211023 23:53:44.854"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath = //p[@class='alert alert-warning']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211023 23:53:44.872" level="INFO">Element 'xpath = //p[@class='alert alert-warning']' is displayed.</msg>
+<status status="PASS" starttime="20211023 23:53:44.854" endtime="20211023 23:53:44.872"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211023 23:53:45.072" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211023 23:53:44.872" endtime="20211023 23:53:45.072"/>
+</kw>
+<status status="PASS" starttime="20211023 23:53:44.817" endtime="20211023 23:53:45.072"/>
+</kw>
+<kw name="Fechar navegador" library="Resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211023 23:53:45.074" endtime="20211023 23:53:47.440"/>
+</kw>
+<status status="PASS" starttime="20211023 23:53:45.073" endtime="20211023 23:53:47.440"/>
+</kw>
+<tag>CT002</tag>
+<status status="PASS" starttime="20211023 23:53:36.079" endtime="20211023 23:53:47.441"/>
+</test>
+<status status="PASS" starttime="20211023 23:53:35.770" endtime="20211023 23:53:47.443"/>
+</suite>
+<status status="PASS" starttime="20211023 23:53:35.734" endtime="20211023 23:53:47.447"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">CT002</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="WebAutomation">Tests.WebAutomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
